@@ -1,0 +1,101 @@
+.slider-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider-slide {
+  min-width: 100%;
+  height: 100vh; /* ← Важно */
+  box-sizing: border-box;
+}
+
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Чтобы изображение красиво вписывалось */
+  display: block;
+}
+
+/* Стрелки */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  z-index: 10;
+  transform: translateY(-50%);
+  opacity: 0.8;
+}
+
+.slider-arrow::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.slider-arrow.prev {
+  left: 20px;
+}
+
+.slider-arrow.prev::before {
+  border-width: 17px 30px 17px 0;
+  border-color: transparent #4a614d transparent transparent;
+}
+
+.slider-arrow.next {
+  right: 20px;
+}
+
+.slider-arrow.next::before {
+  border-width: 17px 0 17px 30px;
+  border-color: transparent transparent transparent #4a614d;
+}
+
+/* Стрелка неактивна */
+.slider-arrow.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.slider-arrow.prev.disabled::before {
+  border-color: transparent #ffffff transparent transparent;
+}
+
+.slider-arrow.next.disabled::before {
+  border-color: transparent transparent transparent #ffffff;
+}
+
+/* Точки-индикаторы */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.slider-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-dot.active {
+  background: #4a614d;
+}

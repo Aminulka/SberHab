@@ -1,0 +1,56 @@
+.page-footer {
+  width: 100%;
+  background: #e0dfdd;
+  color: white;
+  padding: 33px 0; /* (111px - 44px лого) / 2 ≈ 33.5 → округляем */
+  margin-top: 60px;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1600px; /* Фиксируем как в Figma */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 44px; /* Высота логотипа (самый высокий элемент) */
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #4a614d;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 100%;
+  position: absolute;
+  left: 64px; /* Как в Figma */
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+.footer-logo {
+  height: 44px;
+  width: 146px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer-social img {
+  position: absolute;
+  right: 64px; /* 1600px - 1451px (из Figma) = 149px → но у вас left:1451px, значит right: 1600-1451-43 = 106px? */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 43px;
+  width: 43px;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    margin-top: 80px;
+    padding: 15px 20px;
+  }
+}

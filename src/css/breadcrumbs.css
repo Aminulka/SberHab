@@ -1,0 +1,38 @@
+.breadcrumbs {
+  padding: 20px 40px; /* Убираем фон, оставляем только отступы */
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: 0;
+  margin-top: 100px; /* Компенсация для фиксированного header'а */
+  color: #4a614d; /* Цвет текста по умолчанию */
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px; /* Толщина подчёркивания */
+  text-underline-offset: 3px; /* Отступ подчёркивания */
+  color: #4a614d; /* Цвет ссылок */
+  text-transform: uppercase; /* Преобразование в капс */
+  font-weight: 400;
+}
+
+.breadcrumbs a:hover {
+  color: #000000; /* Цвет при наведении */
+}
+
+.breadcrumbs span {
+  text-transform: uppercase;
+  text-decoration: none; /* Убираем подчёркивание */
+  font-weight: 400;
+  color: #666; /* Более светлый цвет для текущей страницы */
+}
+
+/* Разделитель */
+.breadcrumbs a:not(:last-child)::after {
+  content: '/';
+  margin-left: 5px;
+  text-decoration: none;
+  display: inline-block;
+  color: #4a614d;
+}

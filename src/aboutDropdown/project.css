@@ -1,0 +1,125 @@
+/* Основной контейнер */
+.main-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 15px;
+}
+
+/* Заголовок секции */
+.projects-title {
+  width: 31.25vw; /* 500px/1600px */
+  max-width: 500px;
+  min-width: 300px;
+  height: auto;
+  margin: 0 auto 2.5vw; /* 40px/1600px */
+  color: #4a614d;
+  font-weight: 500;
+  font-size: 1.25vw; /* 20px/1600px */
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Сетка проектов */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5vw; /* 40px/1600px */
+}
+
+.project-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для изображений */
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-item:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Подложка с текстом */
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24%;
+  background: rgba(188, 161, 150, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25vw; /* 20px/1600px */
+  transition: all 0.3s ease;
+}
+
+/* Текст в подложке */
+.project-title {
+  font-size: clamp(14px, 0.98vw, 18px); /* Минимум 14px, идеал 0.98vw, максимум 18px */
+  margin-bottom: clamp(8px, 1.6vw, 16px);
+  color: white;
+  line-height: 1.3;
+}
+
+.more-photos {
+  font-weight: 700;
+  font-size: clamp(14px, 1.44vw, 18px);
+  line-height: 1.2;
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+/* Адаптация */
+@media (max-width: 1200px) {
+  .projects-title {
+    font-size: 1.8vw;
+  }
+  .projects-grid {
+    gap: 2vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+  .project-title {
+    font-size: clamp(14px, 1.5vw, 16px);
+  }
+  .more-photos {
+    font-size: clamp(14px, 1.8vw, 16px);
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+  .projects-title {
+    font-size: 16px;
+    width: 80%;
+  }
+  .project-overlay {
+    height: 28%;
+    padding: 4vw;
+  }
+  .project-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .more-photos {
+    font-size: 14px;
+  }
+}

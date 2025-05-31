@@ -1,0 +1,38 @@
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.feature {
+  max-width: 160px;
+  margin: 20px;
+}
+.feature img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.feature h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a614d;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .feature h3 {
+    font-size: 16px;
+  }
+  .feature p {
+    font-size: 13px;
+  }
+}
