@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+.ymaps-2-1-79-copyright__logo {
+  display: none !important;
+}

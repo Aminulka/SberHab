@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 .fabrics-section {
   padding: 60px 0;
-  background: white;
+  background: #fdfbf7;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .fabrics-section h2 {
   text-align: center;
+  color: #4a614d;
+  font-size: 32px;
   margin-bottom: 40px;
 }
 
@@ -13,10 +18,12 @@
   max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
+  padding: 0 20px;
 }
 
 .fabrics-types {
   flex: 1;
+  max-width: 300px;
 }
 
 .fabric-type {
@@ -25,16 +32,20 @@
   border-left: 3px solid #eee;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: white;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .fabric-type.active {
-  border-left: 3px solid #4a7c59;
+  border-left: 3px solid #4a614d;
   background: #f8f8f8;
 }
 
 .fabric-type h3 {
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 15px;
+  color: #4a614d;
+  font-size: 20px;
 }
 
 .fabric-type ul {
@@ -43,8 +54,20 @@
 }
 
 .fabric-type li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: #666;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.fabric-type li:hover {
+  background: #f0f0f0;
+}
+
+.fabric-type li.active {
+  background: #4a614d;
+  color: white;
 }
 
 .fabrics-preview {
@@ -55,10 +78,12 @@
   position: relative;
   margin-bottom: 20px;
   height: 400px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.main-fabric-view img {
+.fabric-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -70,49 +95,275 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  mix-blend-mode: multiply;
+  transition: all 0.3s ease;
 }
 
-.fabric-thumbnails {
+.color-palette {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 15px;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
-.fabric-thumb {
-  width: 80px;
-  height: 80px;
+.color-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   cursor: pointer;
   border: 2px solid transparent;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
-.fabric-thumb.active {
-  border: 2px solid #4a7c59;
+.color-circle:hover {
+  transform: scale(1.1);
 }
 
-.fabric-thumb img {
+.color-circle.active {
+  border: 2px solid #4a614d;
+  transform: scale(1.1);
+}
+
+.color-name {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  white-space: nowrap;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.color-circle:hover .color-name {
+  opacity: 1;
+}
+
+.fabric-info {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.fabric-info h3 {
+  color: #4a614d;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.fabric-info p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.fabric-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.fabric-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.fabric-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fabric-item.active {
+  border: 2px solid #4a614d;
+}
+
+.fabric-item-preview {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.fabric-item-preview img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.color-palette {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+.fabric-item-name {
+  display: block;
+  padding: 8px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.color-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: transform 0.2s;
+@media (max-width: 1024px) {
+  .fabric-type {
+    padding: 10px 12px;
+    background: white;
+    border-left: 3px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fabric-type.active {
+    border-left-color: #4a614d;
+    background: #f8f8f8;
+  }
+
+  .fabric-type h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #4a614d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fabric-type ul {
+    margin: 0;
+    padding-left: 15px;
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+
+  .fabric-type li {
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-.color-circle:hover {
-  transform: scale(1.1);
+@media (max-width: 768px) {
+  .fabrics-section {
+    padding: 40px 0 20px;
+  }
+
+  .fabrics-section h2 {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+
+  .fabrics-content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .fabrics-types {
+    display: flex; /* ставим flex, чтобы оба блока рядом */
+
+    flex-wrap: wrap; /* обязательно */
+
+    gap: 20px; /* небольшой отступ между двумя блоками */
+    /* убираем любые overflow-x */
+
+    padding: 0;
+    max-width: 100%; /* убираем ограничение */
+  }
+
+  /* Для каждого блока с типами тканей */
+  .fabric-type {
+    width: calc(50% - 10px); /* два в строку с отступом */
+    max-height: 320px; /* или нужная высота */
+    padding-right: 10px; /* чтобы не прятался скролл */
+    box-sizing: border-box;
+  }
+
+  .fabric-type.active {
+    border-left: none;
+    border-bottom: 3px solid #4a614d;
+    background: #f8f8f8;
+  }
+
+  /* Горизонтальный скролл для grid с тканями внутри активного типа */
+  .fabric-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  /* Чтобы не сжимались меньше 140px */
+  .fabric-item {
+    width: 140px !important;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  /* Размеры превью ткани */
+  .fabric-item-preview {
+    aspect-ratio: 1;
+  }
+
+  /* Основное изображение ткани */
+  .main-fabric-view {
+    height: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-left: 0;
+  }
+
+  .color-palette {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-top: 10px;
+    overflow-y: hidden;
+    padding-bottom: 5px;
+    flex-wrap: nowrap; /* Важно! Запрет переноса */
+  }
+
+  .color-circle {
+    flex: 0 0 auto; /* фиксируем ширину, не растягиваем */
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    position: relative;
+  }
+
+  .color-circle.active {
+    border-color: #4a614d;
+    transform: scale(1.1);
+  }
+
+  .color-name {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .color-circle:hover .color-name {
+    opacity: 1;
+  }
+
+  /* Описание ткани — пусть остается читаемым */
+  .fabric-info {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+  .fabric-info h3 {
+    font-size: 16px;
+  }
 }

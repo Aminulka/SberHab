@@ -1,56 +1,116 @@
-.page-footer {
+/* Основные стили */
+.footer {
   width: 100%;
-  background: #e0dfdd;
-  color: white;
-  padding: 33px 0; /* (111px - 44px лого) / 2 ≈ 33.5 → округляем */
-  margin-top: 60px;
-  position: relative;
+  background: rgba(224, 223, 221, 0.6);
+  padding: 25px 0;
 }
 
-.footer-content {
-  max-width: 1600px; /* Фиксируем как в Figma */
-  margin: 0 auto;
+.footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  height: 44px; /* Высота логотипа (самый высокий элемент) */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 20px;
 }
 
+/* Общие стили для элементов */
+.footer-link,
+.footer-logo,
+.social-link {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Ссылка "О компании" */
 .footer-link {
   text-decoration: none;
   color: #4a614d;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 100%;
-  position: absolute;
-  left: 64px; /* Как в Figma */
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap; /* Чтобы текст не переносился */
+  font-size: 18px;
+  white-space: nowrap;
 }
 
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+/* Логотип */
 .footer-logo {
+  flex-grow: 1.2;
+}
+
+.logo-img {
   height: 44px;
-  width: 146px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-.footer-social img {
-  position: absolute;
-  right: 64px; /* 1600px - 1451px (из Figma) = 149px → но у вас left:1451px, значит right: 1600-1451-43 = 106px? */
-  top: 50%;
-  transform: translateY(-50%);
-  height: 43px;
-  width: 43px;
+.footer-logo:hover .logo-img {
+  transform: scale(1.05);
 }
 
+/* Иконка соцсети */
+.social-img {
+  height: 40px;
+  width: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-img {
+  transform: scale(1.1);
+}
+
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
-  .breadcrumbs {
-    margin-top: 80px;
-    padding: 15px 20px;
+  .footer {
+    padding: 35px 0; /* Увеличиваем высоту футера */
+  }
+
+  .footer-container {
+    padding: 0 25px;
+    gap: 15px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    height: 38px;
+  }
+
+  .social-img {
+    height: 36px;
+    width: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 0; /* Ещё больше увеличиваем на маленьких экранах */
+  }
+
+  .footer-container {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .footer-link {
+    display: none;
+  }
+
+  .logo-img {
+    height: 34px;
+  }
+
+  .social-img {
+    height: 32px;
+    width: 32px;
   }
 }

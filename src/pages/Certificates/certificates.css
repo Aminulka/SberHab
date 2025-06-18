@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Gothic A1', sans-serif;
+  background: #FDFBF7;
+  position: relative;
+}
+/* Добавляем новые стили для заголовка */
+.certificates-header-sert {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.certificates-header-sert h1 {
+  font-family: 'Prosto One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: rgba(115, 82, 52, 1);
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.title {
+  margin-left: 120px;
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 140%;
+  color: #735234;
+}
+
+.cert-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 119px;
+  margin-bottom: 60px;
+}
+
+.certificate {
+  width: 360px;
+  height: 488px;
+  background-color: #e0e0e0;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.certificate:hover {
+  transform: scale(1.02);
+}
+
+.certificate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cert-caption {
+  width: 353px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 100%;
+  text-align: center;
+  color: #4a614d;
+  margin: 8px auto 0 auto;
+}
+
+.cert-subcaption {
+  width: 353px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  color:  rgba(115, 82, 52, 1);
+  margin: 4px auto 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .cert-container {
+    padding: 0 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .certificate {
+    width: 300px;
+    height: 407px;
+  }
+
+  .cert-caption,
+  .cert-subcaption {
+    width: 300px;
+  }
+
+
+  .title {
+    font-size: 18px;
+    margin: 40px auto 40px;
+    padding: 0 20px;
+    height: auto;
+  }
+}

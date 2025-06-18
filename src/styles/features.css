@@ -3,13 +3,14 @@
   justify-content: space-around;
   padding: 40px 20px;
   flex-wrap: wrap;
+  gap: 10px;
   text-align: center;
 }
 .feature {
-  max-width: 160px;
-  margin: 20px;
+  max-width: 260px;
 }
 .feature img {
+  max-width: 160px;
   width: 60px;
   margin-bottom: 10px;
 }
@@ -23,12 +24,16 @@
 
 .feature p {
   font-size: 14px;
+  font-weight: 400;
   color: #333;
-  line-height: 1.4;
+  line-height: 1;
   text-align: center;
 }
 
 @media (max-width: 768px) {
+  .feature {
+    margin: 20px;
+  }
   .feature h3 {
     font-size: 16px;
   }

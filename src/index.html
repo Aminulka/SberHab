@@ -1,169 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BauTex Design</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/features.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" href="css/fabrics.css">
-    <script src="../dist/build.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="BauTex Design - Как красить" />
+  <title>BauTex Design - Как красить</title>
+
+  <!-- Шрифты -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Иконка -->
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Скрипты внешние -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://vk.com/js/api/openapi.js?169"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ТВОЙ_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
-<header>
-    <div class="logo-section">
-        <img src="images/icon.png" alt="Logo" class="logo">
-        <div class="slogan-container">
-            Жаккардовые обои<br>
-            из кварцевой нити<br>
-            под покраску
-        </div>
-    </div>
-    <nav>
-        <div class="dropdown" id="collectionsDropdown">
-            <button class="dropdown-toggle">Коллекции</button>
-            <div class="dropdown-menu">
-                <a href="collectionsDropdown/basic.html">Basic</a>
-                <a href="collectionsDropdown/loft.html">Loft</a>
-                <a href="collectionsDropdown/geometry.html">Geometry</a>
-                <a href="collectionsDropdown/minimalism.html">Minimalism</a>
-                <a href="collectionsDropdown/classic.html">Classic</a>
-                <a href="collectionsDropdown/kids.html">Kids</a>
-            </div>
-        </div>
-        <button class="nav-button" onclick="window.open('where-to-buy.html', '_blank')">Где купить</button>
-        <div class="dropdown" id="aboutDropdown">
-            <button class="dropdown-toggle">О нас</button>
-            <div class="dropdown-menu">
-                <a href="aboutDropdown/about-design.html">О BauTex Design</a>
-                <a href="aboutDropdown/about-company.html" class="company-link">О компании</a>
-                <a href="aboutDropdown/projects.html">Проекты</a>
-                <a href="aboutDropdown/reviews.html">Отзывы</a>
-                <a href="aboutDropdown/certificates.html">Сертификаты</a>
-                <a href="aboutDropdown/contacts.html">Контакты</a>
-            </div>
-        </div>
-        <div class="dropdown" id="infoDropdown">
-            <button class="dropdown-toggle">Полезное</button>
-            <div class="dropdown-menu">
-                <a href="infoDropdown/how-to-paste.html">Как клеить</a>
-                <a href="infoDropdown/how-to-paint.html">Как красить</a>
-            </div>
-        </div>
-        <button class="nav-button" onclick="window.open('partners.html', '_blank')">Для партнеров</button>
-    </nav>
-    <div class="phone" onclick="window.open('tel:+74955329112')">
-        +7 (495) 532-91-12
-    </div>
-</header>
-
-<!-- Основной экран -->
-<div class="hero">
-    <div class="hero-content">
-        <button>найди свою фактуру</button>
-    </div>
-</div>
-
-<!-- Иконки -->
-<div class="features">
-    <div class="feature">
-        <img src="images/3block_lapa.png" alt="Антивандальные">
-        <h3>Антивандальные</h3>
-        <p>Обоям не страшны механические повреждения, в том числе и ногти домашних животных</p>
-    </div>
-    <div class="feature">
-        <img src="images/3block_bacteria.png" alt="Гипоаллергенные">
-        <h3>Гипоаллергенные</h3>
-        <p>Обои не вызывают аллергию и сохраняют баланс влажности в помещении</p>
-    </div>
-    <div class="feature">
-        <img src="images/3block_listik.png" alt="Экологичные">
-        <h3>Экологичные</h3>
-        <p>Обои на 100% состоят из натуральных природных материалов</p>
-    </div>
-    <div class="feature">
-        <img src="images/3block_water.png" alt="Можно мыть">
-        <h3>Можно мыть</h3>
-        <p>Обои не только можно мыть с чистящими средствами, но и использовать их в помещениях с повышенной влажностью</p>
-    </div>
-</div>
-
-<div class="slider-container">
-    <div class="slider-track">
-        <div class="slider-slide"><img src="images/slider1.jpg" alt="Проект 1" class="slider-img"></div>
-        <div class="slider-slide"><img src="images/slider1.jpg" alt="Проект 2" class="slider-img"></div>
-        <div class="slider-slide"><img src="images/slider1.jpg" alt="Проект 3" class="slider-img"></div>
-        <div class="slider-slide"><img src="images/slider1.jpg" alt="Проект 4" class="slider-img"></div>
-    </div>
-
-    <div class="slider-arrow prev"></div>
-    <div class="slider-arrow next"></div>
-
-    <div class="slider-dots">
-        <div class="slider-dot active"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-        <div class="slider-dot"></div>
-    </div>
-</div>
-<!-- Блок с тканями и палитрой -->
-<div class="fabrics-section">
-    <div class="container">
-        <h2>Подберите ткань под ваш стиль</h2>
-
-        <div class="fabrics-content">
-            <div class="fabrics-types">
-                <div class="fabric-type active" data-type="basic">
-                    <h3>Basic</h3>
-                    <ul>
-                        <li>Скопки</li>
-                        <li>Лигмент прозванный пакет</li>
-                    </ul>
-                </div>
-
-                <div class="fabric-type" data-type="loft">
-                    <h3>Loft</h3>
-                    <ul>
-                        <li>Волге</li>
-                    </ul>
-                </div>
-
-                <!-- Добавьте остальные типы тканей по аналогии -->
-            </div>
-
-            <div class="fabrics-preview">
-                <div class="main-fabric-view">
-                    <img src="basic-default.jpg" alt="Выбранная ткань" id="mainFabric">
-                    <div class="color-overlay" id="colorOverlay"></div>
-                </div>
-
-                <div class="fabric-thumbnails">
-                    <div class="fabric-thumb active" data-img="basic1.jpg">
-                        <img src="basic1-thumb.jpg" alt="Ткань 1">
-                    </div>
-                    <div class="fabric-thumb" data-img="basic2.jpg">
-                        <img src="basic2-thumb.jpg" alt="Ткань 2">
-                    </div>
-                    <!-- Добавьте другие миниатюры тканей -->
-                </div>
-
-                <div class="color-palette">
-                    <div class="color-circle" data-color="#ff5733"></div>
-                    <div class="color-circle" data-color="#33ff57"></div>
-                    <div class="color-circle" data-color="#3357ff"></div>
-                    <!-- Добавьте другие цвета -->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Swiper JS -->
-<script src="dropdown.js"></script>
-<script src="swiper.js"></script>
+<noscript>Включите JavaScript для работы приложения.</noscript>
+<div id="root"></div>
 </body>
 </html>

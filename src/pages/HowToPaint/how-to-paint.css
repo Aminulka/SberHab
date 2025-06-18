@@ -1,0 +1,250 @@
+/* Основные стили */
+.how-to-paint-page {
+  background: #fdfbf7;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Gothic A1', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+.how-to-paint-page h1{
+  width: 80.67%; /* Пропорционально от ширины родителя */
+  max-width: 1160px; /* Максимальная ширина как в макете */
+  margin: 26px auto; /* Центрируем и задаем отступ сверху */
+  font-family: 'Prosto One', cursive;
+  font-weight: 400; /* Regular начертание */
+  font-size: 44px; /* Крупный размер из Figma */
+  line-height: 130%;
+  text-transform: uppercase; /* Все буквы заглавные */
+  color: #735234; /* Тот же коричневый цвет */
+}
+
+/* Секция с видео */
+.video-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin: 20px auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-frame-container,
+.video-preview,
+.youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Кнопка воспроизведения */
+.play-button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.play-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 25px solid #b84c36;
+  border-bottom: 15px solid transparent;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* SVG оверлей */
+.svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.lines-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.how-to-paint-content-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.how-to-paint-content-wrapper {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.how-to-paint-section {
+  margin-bottom: 40px;
+}
+
+.how-to-paint-section-title {
+  font-family: 'Prosto One', cursive;
+  font-size: 28px;
+  color: #b84c36;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.how-to-paint-section-title.green {
+  color: #4a614d;
+}
+
+.how-to-paint-subtitle {
+  font-size: 18px;
+  color: #4a614d;
+  margin: 20px 0 10px;
+}
+
+.how-to-paint-section-text {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.how-to-paint-list,
+.how-to-paint-sublist {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.how-to-paint-list li,
+.how-to-paint-sublist li {
+  margin-bottom: 8px;
+}
+
+.how-to-paint-steps {
+  padding-left: 25px;
+}
+
+.how-to-paint-steps li {
+  margin-bottom: 12px;
+}
+
+.how-to-paint-warning {
+  background: #fff4f4;
+  border-left: 4px solid #B84C36;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.how-to-paint-tip {
+  background: #f8fff4;
+  border-left: 4px solid #7bed9f;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.how-to-paint-final-note {
+  background: #f4f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin-top: 40px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .video-section {
+    padding: 0 15px;
+  }
+
+  .container-how-to-paint {
+    padding: 0 15px;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .how-to-paint-page h1 {
+    margin-left: 10px;
+  }
+  how-to-paint-section-title {
+    font-size: 22px;
+  }
+
+  .how-to-paint-section-text {
+    font-size: 15px;
+  }
+
+  .section-content {
+    font-size: 15px;
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play-button::after {
+    border-top: 12px solid transparent;
+    border-left: 18px solid #b84c36;
+    border-bottom: 12px solid transparent;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-paint-section-title {
+    font-size: 22px;
+  }
+
+  .how-to-paint-section-text {
+    font-size: 15px;
+  }
+
+  .how-to-paint-final-note {
+    padding: 15px;
+  }
+}

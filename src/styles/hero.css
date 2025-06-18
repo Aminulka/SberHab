@@ -1,38 +1,126 @@
-.hero {
-  margin-top: 100px;
+.hero-section {
+  top: 0;
+  position: relative;
   width: 100%;
-  min-height: 90vh;
-  background-image: url('../images/phone.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.hero-image-wrapper {
   position: relative;
+  z-index: 3;
+  max-width: 1246px;
+  width: 87%;
+  height: 581px;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  overflow: hidden;
+  box-shadow: inset 23px 32px 40px rgba(0, 0, 0, 0.15);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center; /* Обрезаем справа при уменьшении */
+}
+
+/* Адаптивный текст */
+.hero-text-overlay {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+  transform: translateY(-50%);
+  z-index: 4;
+  font-family: 'Prosto One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 36px); /* Адаптивный размер */
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #FFF8EB;
+  width: min(40%, 500px); /* Ограничение максимальной ширины */
+  pointer-events: none;
+  text-align: left;
+}
+
+.hero-text-overlay span {
   color: white;
-  padding: 20px;
 }
 
-.hero button {
-  border-radius: 16px;
-  padding: 12px 30px;
-  background: #4a7c59;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: 700;
-  margin-top: 20px;
-  transition: background 0.3s ease;
+/* Адаптивные кнопки */
+.hero-buttons {
+  position: absolute;
+  bottom: 40px;
+  z-index: 4;
+  display: flex;
+  gap: 12px;
+  right: 10%;
+  width: 90%;
+  max-width: 516px; /* 160px * 3 + 12px * 2 */
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.hero button:hover {
-  background: #3a6a49;
+.hero-button {
+  width: clamp(100px, 30%, 160px); /* Адаптивная ширина */
+  height: 40px;
+  border-radius: 5px;
+  background: none;
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: 300;
+  font-size: clamp(12px, 2vw, 14px); /* Адаптивный размер текста */
+  line-height: 100%;
+  color: #fdfbf7;
+  border: 0.5px solid #FDFBF7;
+  transition: all 0.3s ease;
+}
+
+.hero-button.active {
+  background-color: #B84C36;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    height: 800px;
+  }
+}
+
+
+/* Медиазапросы для очень маленьких экранов */
+@media (max-width: 748px) {
+  .hero-section {
+    height: 750px;
+    padding-top: 20px;
+  }
+  .hero-text-overlay {
+    right: 35%;
+    width: 50%;
+  }
+
+  .hero-buttons {
+    gap: 8px;
+    bottom: 20px;
+    right: 5%;
+  }
+
+  .hero-button {
+    height: 35px;
+  }
 }

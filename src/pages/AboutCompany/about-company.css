@@ -1,0 +1,133 @@
+.about-company-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 95px 60px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.about-company-container h1 {
+  width: 652px;
+  height: 32px;
+  margin: 0 auto 40px;
+  color: #4a614d;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  margin-top: 30px;
+  gap: 40px;
+}
+
+.about-text {
+  width: 559px;
+  color: #474848;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 100%;
+  min-height: 377px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 3px;
+}
+
+.about-text p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.about-image {
+  width: 763px;
+  margin-left: auto;
+  height: 377px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.company-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19.625vw;
+  min-width: 250px;
+  height: 3.875vw;
+  min-height: 50px;
+  margin: 2.5rem auto 0;
+  color: white;
+  background: #4a614d;
+  text-decoration: none;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1.125vw;
+  line-height: 100%;
+  text-align: center;
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+/* Адаптация для экранов меньше 1600px */
+@media (max-width: 1600px) {
+  .about-text {
+    width: 35%;
+  }
+  .about-image {
+    width: 48%;
+  }
+  .company-button {
+    font-size: 18px;
+    width: 314px;
+    height: 62px;
+  }
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .about-text,
+  .about-image {
+    width: 100%;
+  }
+  .about-image {
+    height: auto;
+  }
+  .about-image img {
+    height: auto;
+    margin-top: 30px;
+  }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .about-company-container {
+    margin-top: 80px;
+    padding: 30px 20px 40px;
+  }
+  .about-company-container h1 {
+    width: auto;
+    margin-top: 0;
+  }
+  .breadcrumbs {
+    padding: 20px;
+  }
+  .about-text {
+    font-size: 15px;
+  }
+  .company-button {
+    width: 80%;
+    height: 50px;
+    font-size: 16px;
+    min-width: unset;
+  }
+}

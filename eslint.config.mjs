@@ -21,7 +21,7 @@ export default defineConfig([
     plugins: { react: pluginReact },
     settings: {
       react: {
-        version: 'detect',
+        version: '19.1.0',
       },
     },
   },
@@ -34,4 +34,4 @@ export default defineConfig([
     },
   },
   eslintPluginPrettierRecommended,
-]); 
+]);
